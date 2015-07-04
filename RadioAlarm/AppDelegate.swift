@@ -11,11 +11,11 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-  var window: UIWindow?
-
+  var window: UIWindow? = UIWindow(frame: UIScreen.mainScreen().bounds)
+  var mainNavigationController: UINavigationController?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Override point for customization after application launch.
+    setupWindow()
     return true
   }
 
@@ -40,7 +40,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
+}
 
-
+extension AppDelegate {
+  
+  private func setupWindow() {
+    mainNavigationController = UINavigationController(
+      rootViewController: AlarmsTableViewController()
+    )
+    window?.rootViewController = mainNavigationController
+    window?.makeKeyAndVisible()
+  }
+  
 }
 
