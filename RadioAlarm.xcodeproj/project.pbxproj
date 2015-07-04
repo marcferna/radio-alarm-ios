@@ -14,6 +14,7 @@
 		49880C081B4756BC0010BDE0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49880C071B4756BC0010BDE0 /* Info.plist */; };
 		49880C0C1B4758330010BDE0 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49880C0B1B4758330010BDE0 /* MainNavigationController.swift */; };
 		49880C0E1B4758810010BDE0 /* AlarmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49880C0D1B4758810010BDE0 /* AlarmsTableViewController.swift */; };
+		49880C111B475A7F0010BDE0 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49880C101B475A7F0010BDE0 /* Alarm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		49880C071B4756BC0010BDE0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49880C0B1B4758330010BDE0 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		49880C0D1B4758810010BDE0 /* AlarmsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsTableViewController.swift; sourceTree = "<group>"; };
+		49880C101B475A7F0010BDE0 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		965720142E655C9A121F089C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				49880C061B4756BC0010BDE0 /* Config */,
 				49880C031B4756B60010BDE0 /* Assets */,
 				49880BE31B4753760010BDE0 /* AppDelegate.swift */,
+				49880C0F1B475A6F0010BDE0 /* Models */,
 				49880C091B4757F40010BDE0 /* Controllers */,
 				49880C0A1B4757FA0010BDE0 /* Views */,
 			);
@@ -139,6 +142,14 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		49880C0F1B475A6F0010BDE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49880C101B475A7F0010BDE0 /* Alarm.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		683AFEA77AAB5491E5339B33 /* Pods */ = {
@@ -311,6 +322,7 @@
 				49880C0C1B4758330010BDE0 /* MainNavigationController.swift in Sources */,
 				49880C0E1B4758810010BDE0 /* AlarmsTableViewController.swift in Sources */,
 				49880BE41B4753760010BDE0 /* AppDelegate.swift in Sources */,
+				49880C111B475A7F0010BDE0 /* Alarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
