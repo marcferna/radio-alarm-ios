@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
   
   private func setupWindow() {
-    mainNavigationController = UINavigationController(
+    mainNavigationController = MainNavigationController(
       rootViewController: AlarmsTableViewController()
     )
     window?.rootViewController = mainNavigationController

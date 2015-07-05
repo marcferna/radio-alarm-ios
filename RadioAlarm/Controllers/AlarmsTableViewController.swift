@@ -72,21 +72,9 @@ extension AlarmsTableViewController {
   }
   
   internal func addWasTapped() {
-//    let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-//    // Import many items in a background thread
-//    dispatch_async(queue) {
-//      // Get new realm and table since we are in a new thread
-//      do {
-//        let realm = try Realm()
-//        realm.beginWrite()
-//        for _ in 0..<5 {
-//          // Add row via dictionary. Order is ignored.
-//          realm.create(Alarm.self, value: ["name": "randomString", "time": NSDate()])
-//        }
-//        realm.commitWrite()
-//      } catch _ {
-//        
-//      }
-//    }
+    let alarmsAddNavigation = AlarmsAddNavigationController(
+      rootViewController: AlarmsAddViewController()
+    )
+    self.presentViewController(alarmsAddNavigation, animated: true, completion: nil)
   }
 }
