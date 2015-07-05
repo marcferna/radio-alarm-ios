@@ -11,6 +11,8 @@
 		4944108E1B48AD7400D497C2 /* AlarmsAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4944108C1B48AD7400D497C2 /* AlarmsAddViewController.swift */; };
 		4944108F1B48AD7400D497C2 /* AlarmsAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4944108D1B48AD7400D497C2 /* AlarmsAddViewController.xib */; };
 		494410911B48AFC000D497C2 /* AlarmsAddNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494410901B48AFC000D497C2 /* AlarmsAddNavigationController.swift */; };
+		494410941B48FBF200D497C2 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494410921B48FBF200D497C2 /* AlarmTableViewCell.swift */; };
+		494410951B48FBF200D497C2 /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 494410931B48FBF200D497C2 /* AlarmTableViewCell.xib */; };
 		49880BE41B4753760010BDE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49880BE31B4753760010BDE0 /* AppDelegate.swift */; };
 		49880BFA1B4753760010BDE0 /* RadioAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49880BF91B4753760010BDE0 /* RadioAlarmTests.swift */; };
 		49880C051B4756B60010BDE0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49880C041B4756B60010BDE0 /* Images.xcassets */; };
@@ -35,6 +37,8 @@
 		4944108C1B48AD7400D497C2 /* AlarmsAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsAddViewController.swift; sourceTree = "<group>"; };
 		4944108D1B48AD7400D497C2 /* AlarmsAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmsAddViewController.xib; sourceTree = "<group>"; };
 		494410901B48AFC000D497C2 /* AlarmsAddNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsAddNavigationController.swift; sourceTree = "<group>"; };
+		494410921B48FBF200D497C2 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		494410931B48FBF200D497C2 /* AlarmTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmTableViewCell.xib; sourceTree = "<group>"; };
 		49880BDE1B4753760010BDE0 /* RadioAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49880BE31B4753760010BDE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49880BF31B4753760010BDE0 /* RadioAlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioAlarmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +145,8 @@
 				494410901B48AFC000D497C2 /* AlarmsAddNavigationController.swift */,
 				4944108C1B48AD7400D497C2 /* AlarmsAddViewController.swift */,
 				4944108D1B48AD7400D497C2 /* AlarmsAddViewController.xib */,
+				494410921B48FBF200D497C2 /* AlarmTableViewCell.swift */,
+				494410931B48FBF200D497C2 /* AlarmTableViewCell.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4944108F1B48AD7400D497C2 /* AlarmsAddViewController.xib in Resources */,
+				494410951B48FBF200D497C2 /* AlarmTableViewCell.xib in Resources */,
 				49880C051B4756B60010BDE0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +340,7 @@
 				49880C0C1B4758330010BDE0 /* MainNavigationController.swift in Sources */,
 				49880C0E1B4758810010BDE0 /* AlarmsTableViewController.swift in Sources */,
 				49880BE41B4753760010BDE0 /* AppDelegate.swift in Sources */,
+				494410941B48FBF200D497C2 /* AlarmTableViewCell.swift in Sources */,
 				49880C111B475A7F0010BDE0 /* Alarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

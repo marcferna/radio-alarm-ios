@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="68" id="KGk-i7-Jjw" customClass="AlarmTableViewCell" customModule="RadioAlarm" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNZ-Vh-w9i">
+                        <rect key="frame" x="8" y="11" width="234" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENS-OS-Uci">
+                        <rect key="frame" x="263" y="18" width="51" height="31"/>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cr3-im-BeC">
+                        <rect key="frame" x="8" y="36" width="234" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cr3-im-BeC" firstAttribute="trailing" secondItem="CNZ-Vh-w9i" secondAttribute="trailing" id="2ol-1p-iBs"/>
+                    <constraint firstItem="ENS-OS-Uci" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="A8R-pJ-Axc"/>
+                    <constraint firstItem="ENS-OS-Uci" firstAttribute="leading" secondItem="CNZ-Vh-w9i" secondAttribute="trailing" constant="21" id="XSs-8K-6O4"/>
+                    <constraint firstAttribute="bottom" secondItem="cr3-im-BeC" secondAttribute="bottom" constant="11" id="Yzn-FW-cPP"/>
+                    <constraint firstItem="CNZ-Vh-w9i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="eja-fp-W7B"/>
+                    <constraint firstItem="cr3-im-BeC" firstAttribute="top" secondItem="CNZ-Vh-w9i" secondAttribute="bottom" constant="4" id="fBw-RX-fmb"/>
+                    <constraint firstItem="cr3-im-BeC" firstAttribute="leading" secondItem="CNZ-Vh-w9i" secondAttribute="leading" id="mbu-ru-FSa"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="CNZ-Vh-w9i" secondAttribute="leading" id="r4y-vY-pdl"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ENS-OS-Uci" secondAttribute="trailing" id="vfN-pH-xIN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="enableSwitch" destination="ENS-OS-Uci" id="M5e-oa-upr"/>
+                <outlet property="timeLabel" destination="cr3-im-BeC" id="9rg-SP-Xlg"/>
+                <outlet property="titleLabel" destination="CNZ-Vh-w9i" id="DF2-Ni-Z4V"/>
+            </connections>
+            <point key="canvasLocation" x="440" y="186"/>
+        </tableViewCell>
+    </objects>
+</document>

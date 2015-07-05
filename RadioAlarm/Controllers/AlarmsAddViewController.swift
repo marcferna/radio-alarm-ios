@@ -39,19 +39,28 @@ extension AlarmsAddViewController {
   }
   
   internal func saveWasTapped() {
-    // Start spinner
-    let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-    dispatch_async(queue) {
-      do {
-        let realm = try Realm()
-        realm.beginWrite()
-        realm.create(Alarm.self, value: ["name": "randomString", "time": NSDate()])
-        realm.commitWrite()
-      } catch _ {
-        // Error the element couldn't get save
+    if (validateFields()) {
+      // Start spinner
+      let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+      dispatch_async(queue) {
+        do {
+          let realm = try Realm()
+          let newAlarm = Alarm()
+          newAlarm.name = self.nameTextField.text!
+          newAlarm.time = self.timePicker.date
+          realm.write {
+            realm.add(newAlarm)
+          }
+        } catch _ {
+          // Error the element couldn't get save
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+        // End Spinner
       }
-      self.dismissViewControllerAnimated(true, completion: nil)
-      // End Spinner
     }
+  }
+  
+  private func validateFields() -> Bool {
+    return !self.nameTextField.text!.isEmpty
   }
 }

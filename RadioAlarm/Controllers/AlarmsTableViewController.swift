@@ -11,13 +11,19 @@ import RealmSwift
 
 class AlarmsTableViewController: UITableViewController {
   
-  var alarms: Results<Alarm>!
-  var notificationToken: NotificationToken?
+  private var alarms: Results<Alarm>!
+  private var notificationToken: NotificationToken?
+  private var alarmTimeFormatter = NSDateFormatter()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTable()
     setupNavigation()
+    setupFormatter()
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
   }
   
   private func setupNavigation() {
@@ -27,6 +33,12 @@ class AlarmsTableViewController: UITableViewController {
   }
   
   private func setupTable() {
+    tableView.estimatedRowHeight = 69
+    tableView.registerNib(
+      UINib(nibName: "AlarmTableViewCell", bundle: nil),
+      forCellReuseIdentifier: AlarmTableViewCell.identifier
+    )
+    
     do {
       alarms = try Realm().objects(Alarm).sorted("order")
       try notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
@@ -36,11 +48,10 @@ class AlarmsTableViewController: UITableViewController {
       alarms = Results<Alarm>.new()
       tableView.reloadData()
     }
-    tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
+  private func setupFormatter() {
+    alarmTimeFormatter.dateFormat = "HH:mm a"
   }
 }
 
@@ -53,11 +64,11 @@ extension AlarmsTableViewController {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier(AlarmTableViewCell.identifier, forIndexPath: indexPath) as! AlarmTableViewCell
     
     let alarm = alarms[indexPath.row]
-    cell.textLabel?.text = alarm.name
-    cell.detailTextLabel?.text = alarm.time.description
+    cell.titleLabel.text = alarm.name
+    cell.timeLabel.text = alarmTimeFormatter.stringFromDate(alarm.time)
     
     return cell
   }
