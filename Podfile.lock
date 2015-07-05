@@ -7,12 +7,35 @@ PODS:
     - Realm (= 0.93.2)
 
 DEPENDENCIES:
-  - Alamofire
-  - RealmSwift
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift-2.0`)
+  - Realm (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
+  - RealmSwift (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :branch: swift-2.0
+    :git: https://github.com/Alamofire/Alamofire.git
+  Realm:
+    :branch: swift-2.0
+    :git: https://github.com/realm/realm-cocoa.git
+  RealmSwift:
+    :branch: swift-2.0
+    :git: https://github.com/realm/realm-cocoa.git
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: fd71afb3a0af2042b9f05a6b9f29317ad4903703
+    :git: https://github.com/Alamofire/Alamofire.git
+  Realm:
+    :commit: d404ffd2c9abf5e2cbc3b0789052af803deda5bc
+    :git: https://github.com/realm/realm-cocoa.git
+  RealmSwift:
+    :commit: d404ffd2c9abf5e2cbc3b0789052af803deda5bc
+    :git: https://github.com/realm/realm-cocoa.git
 
 SPEC CHECKSUMS:
   Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
-  Realm: 2fdd0ae74f730e190384e0338d8a0d3654df8220
+  Realm: 580569262baa2bb57e530d6a4aeb00e8e083f884
   RealmSwift: 231b064da9f98b1c4f325fe1f1cb8756aae2b8d6
 
 COCOAPODS: 0.37.2
