@@ -40,23 +40,16 @@ extension AlarmsAddViewController {
   
   internal func saveWasTapped() {
     if (validateFields()) {
-      // Start spinner
-      let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-      dispatch_async(queue) {
-        do {
-          let realm = try Realm()
-          let newAlarm = Alarm()
-          newAlarm.name = self.nameTextField.text!
-          newAlarm.time = self.timePicker.date
-          realm.write {
-            realm.add(newAlarm)
-          }
-        } catch _ {
-          // Error the element couldn't get save
-        }
+      let spinner = Spinner(view: self.view)
+      let newAlarm = Alarm()
+      newAlarm.name = self.nameTextField.text!
+      newAlarm.time = self.timePicker.date
+      newAlarm.save(success: {
+        spinner.dismiss()
         self.dismissViewControllerAnimated(true, completion: nil)
-        // End Spinner
-      }
+      }, failure: {
+        spinner.dismiss()
+      })
     }
   }
   

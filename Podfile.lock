@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (1.2.3)
+  - JGProgressHUD (1.2.7)
   - Realm (0.93.2):
     - Realm/Headers (= 0.93.2)
   - Realm/Headers (0.93.2)
@@ -8,6 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift-2.0`)
+  - JGProgressHUD
   - Realm (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
   - RealmSwift (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
 
@@ -35,6 +37,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
+  JGProgressHUD: a45c1d16adddf7e38092ce3f0d71d3955d2de2ec
   Realm: 580569262baa2bb57e530d6a4aeb00e8e083f884
   RealmSwift: 231b064da9f98b1c4f325fe1f1cb8756aae2b8d6
 

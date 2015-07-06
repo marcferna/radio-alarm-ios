@@ -11,7 +11,7 @@ import RealmSwift
 
 class AlarmsTableViewController: UITableViewController {
   
-  private var alarms: Results<Alarm>!
+  private var alarms: [Alarm]!
   private var notificationToken: NotificationToken?
   private var alarmTimeFormatter = NSDateFormatter()
   
@@ -40,12 +40,14 @@ class AlarmsTableViewController: UITableViewController {
     )
     
     do {
-      alarms = try Realm().objects(Alarm).sorted("order")
-      try notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
+      let realm = try Realm()
+      self.alarms = Array(realm.objects(Alarm).sorted("order").generate()) as [Alarm]
+      notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+        self.alarms = Array(realm.objects(Alarm).sorted("order").generate()) as [Alarm]
         self.tableView.reloadData()
       }
     } catch _ {
-      alarms = Results<Alarm>.new()
+      alarms = [Alarm]()
       tableView.reloadData()
     }
   }
@@ -69,8 +71,33 @@ extension AlarmsTableViewController {
     let alarm = alarms[indexPath.row]
     cell.titleLabel.text = alarm.name
     cell.timeLabel.text = alarmTimeFormatter.stringFromDate(alarm.time)
-    
+    cell.showsReorderControl = true
     return cell
+  }
+  
+  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    let spinner = Spinner(view: self.view)
+    let alarm = alarms[indexPath.row]
+    alarm.delete(
+      success: { spinner.dismiss() },
+      failure: { spinner.dismiss() }
+    )
+  }
+  
+  override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return true
+  }
+  
+  override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+    let alarm = alarms.removeAtIndex(sourceIndexPath.row)
+    alarms.insert(alarm, atIndex: destinationIndexPath.row)
+    
+    let startIndex = min(sourceIndexPath.row, destinationIndexPath.row)
+    let endIndex = max(sourceIndexPath.row, destinationIndexPath.row)
+    for index in startIndex...endIndex {
+      let alarm = alarms[index]
+      print("\(alarm.name) should have order \(index)")
+    }
   }
 }
 
@@ -79,10 +106,11 @@ extension AlarmsTableViewController {
 extension AlarmsTableViewController {
   
   internal func editWasTapped() {
-    
+    tableView.setEditing(!tableView.editing, animated: true)
   }
   
   internal func addWasTapped() {
+    tableView.setEditing(false, animated: true)
     let alarmsAddNavigation = AlarmsAddNavigationController(
       rootViewController: AlarmsAddViewController()
     )
